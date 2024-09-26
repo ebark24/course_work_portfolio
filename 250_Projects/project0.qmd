@@ -34,10 +34,9 @@ _THIS `.qmd` IS INSTRUCTIONAL AND SHOULD `NOT` BE USED TO WRITE YOUR REPORTS (EX
 #| include: false
 import pandas as pd
 import numpy as np
-from lets_plot import *
 from palmerpenguins import load_penguins
-penguins = load_penguins()
-penguins
+from lets_plot import *
+
 
 LetsPlot.setup_html(isolated_frame=True)
 ```
@@ -99,19 +98,6 @@ __COPY PASTE QUESTION|TASK 2 FROM THE PROJECT HERE__
   ggplot(df.head(500), aes(x='displ', y='hwy')) + geom_point()
 )
 
-(
-    ggplot(data=penguins, mapping=aes(x="flipper_length_mm", y="body_mass_g"))
-    + geom_point(aes(color="species", shape="species"))
-    + geom_smooth(method="lm")
-    + labs(
-        title="Body mass and flipper length",
-        subtitle="Dimensions for Adelie, Chinstrap, and Gentoo Penguins",
-        x="Flipper length (mm)",
-        y="Body mass (g)",
-        color="Species",
-        shape="Species",
-    )
-)
 ```
 
 ## Question|Task 3
