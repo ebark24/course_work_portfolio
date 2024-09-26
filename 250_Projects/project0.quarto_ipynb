@@ -38,7 +38,7 @@
         "\n",
         "_THIS `.qmd` IS INSTRUCTIONAL AND SHOULD `NOT` BE USED TO WRITE YOUR REPORTS (EXCEPTION - PROJECT 0). THERE IS ANOTHER TEMPLATE FILE FOR THAT. YOU WILL NEED TO `PREVIEW` THE REPORT TO PRODUCE A `.html` FILE. YOU WILL SUBMIT THE `.html` FILE ON CANVAS._\n"
       ],
-      "id": "4c130369"
+      "id": "46cba071"
     },
     {
       "cell_type": "code",
@@ -65,7 +65,7 @@
         "\n",
         "_A Client has requested this analysis and this is your one shot of what you would say to your boss in a 2 min elevator ride before he takes your report and hands it to the client._\n"
       ],
-      "id": "6e063cac"
+      "id": "26893ea0"
     },
     {
       "cell_type": "code",
@@ -103,7 +103,7 @@
         "\n",
         "- _YOU SHOULD HAVE QUALITY COMMENTS THAT DESCRIBES YOUR CODES. OFTEN CODEERS WORK IN TEAMS AND YOU NEED TO HAVE QUALTIY COMMENTS FOR YOUR TEAM AND YOURSELF. YOU MAY NEED TO REVISIT CODE YOU WROTE OVER A YEAR AGO, AND IF YOU DONT COMMENT IT NOW YOU WONT REMEMBER WHY YOU DID WHAT YOU DID._\n"
       ],
-      "id": "761aae72"
+      "id": "164dc593"
     },
     {
       "cell_type": "code",
@@ -127,7 +127,7 @@
         "\n",
         "- _include figures in chunks and discuss your findings in the figure._\n"
       ],
-      "id": "828563a5"
+      "id": "6bf87613"
     },
     {
       "cell_type": "code",
@@ -157,7 +157,7 @@
         "\n",
         "- _PROVIDE TABLES THAT HELP ADDRESS THE QUESTIONS AND TASKS (IF APPLICABLE)._\n"
       ],
-      "id": "72753a5e"
+      "id": "ed5deb5c"
     },
     {
       "cell_type": "code",
@@ -190,7 +190,7 @@
         "\n",
         "Note: These also work in `Slack` and it is expected they are used for any code shared in that app. No screen shots allowed."
       ],
-      "id": "397749f3"
+      "id": "b3fa85d0"
     }
   ],
   "metadata": {
