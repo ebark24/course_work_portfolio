@@ -6,7 +6,8 @@ website:
   favicon: Images/favicon.png
   back-to-top-navigation: true
   repo-url: https://github.com/your_url
-  #repo-actions: [issue] #if you want to allow others to report issues on your site uncomment this line
+  issue-url: https://github.com/your_url/issues/new
+  repo-actions: [issue]
 
   page-footer: 
     border: true
