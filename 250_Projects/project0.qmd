@@ -1,7 +1,7 @@
 ---
 title: "Client Report - Introduction"
 subtitle: "Course DS 250"
-author: "[STUDENT NAME]"
+author: "Eli Barker"
 format:
   html:
     self-contained: true
@@ -27,7 +27,7 @@ execute:
 
 ### Introduction
 
-_THIS `.qmd` IS INSTRUCTIONAL AND SHOULD `NOT` BE USED TO WRITE YOUR REPORTS (EXCEPTION - PROJECT 0). THERE IS ANOTHER TEMPLATE FILE FOR THAT. YOU WILL NEED TO `PREVIEW` THE REPORT TO PRODUCE A `.html` FILE. YOU WILL SUBMIT THE `.html` FILE ON CANVAS._
+Today we will be looking at a data set that contains some interesting infromation about penguins to see if we can find any trends!
 
 ```{python}
 #| label: libraries
@@ -36,16 +36,14 @@ import pandas as pd
 import numpy as np
 from palmerpenguins import load_penguins
 from lets_plot import *
-
+penguins = load_penguins()
 
 LetsPlot.setup_html(isolated_frame=True)
 ```
 
 
 ## Elevator pitch
-_A SHORT (2-3 SENTENCES) PARAGRAPH THAT `DESCRIBES KEY INSIGHTS` TAKEN FROM METRICS IN THE PROJECT RESULTS THINK TOP OR MOST IMPORTANT RESULTS._ (Note: this is not a summary of the project, but a summary of the results.)
-
-_A Client has requested this analysis and this is your one shot of what you would say to your boss in a 2 min elevator ride before he takes your report and hands it to the client._
+The data shows that as the body mass of a penguin increseas, so does it's flipper length. This infomration can be used to help indentify and characterize different species of penguins.
 
 ```{python}
 #| label: project-data
@@ -63,15 +61,8 @@ __Highlight the Questions and Tasks__
 
 __COPY PASTE QUESTION|TASK 1 FROM THE PROJECT HERE__
 
-_Add details here to answer the question but `NOT` like an assignment Q&A. You need to `write your answers as a consulting solution report`. A Client needs to understand the answer, but also needs to understand the decisions that went into the answer (when applicable)._
+- The data that will be looked at relates to Penguins and looking for trends that occur. In particular we will be looking at the body mass and flipper length to see if there is any correlation to species.
 
-_include figures in chunks and discuss your findings in the figure._
-
-- _YOU SHOULD HAVE QUALITY WRITING THAT DESCRIBES YOUR CHARTS AND TABLES._
-
-- _WE HIGHLY RECOMMEND [GRAMMARLY](https://grammarly.com/) TO FIX YOUR SPELLING AND GRAMMAR. WRITING TAKES TIME TO BE CLEAR. SPEND THE TIME TO PRACITCE._ 
-
-- _YOU SHOULD HAVE QUALITY COMMENTS THAT DESCRIBES YOUR CODES. OFTEN CODEERS WORK IN TEAMS AND YOU NEED TO HAVE QUALTIY COMMENTS FOR YOUR TEAM AND YOURSELF. YOU MAY NEED TO REVISIT CODE YOU WROTE OVER A YEAR AGO, AND IF YOU DONT COMMENT IT NOW YOU WONT REMEMBER WHY YOU DID WHAT YOU DID._
 
 ```{python}
 #| label: Q1
@@ -83,9 +74,9 @@ _include figures in chunks and discuss your findings in the figure._
 
 ## Question|Task 2
 
-__COPY PASTE QUESTION|TASK 2 FROM THE PROJECT HERE__
+__Penuins Chart__
 
-- _include figures in chunks and discuss your findings in the figure._
+- As you can see, as the body mass of a penguin increseas, so does it's flipper length. We can see that the Gentoo species has both the largest body mass and flipper length.
 
 ```{python}
 #| label: Q1-chart
@@ -94,17 +85,27 @@ __COPY PASTE QUESTION|TASK 2 FROM THE PROJECT HERE__
 #| fig-align: center
 # Include and execute your code here
 
-(
-  ggplot(df.head(500), aes(x='displ', y='hwy')) + geom_point()
-)
 
+(
+    ggplot(data=penguins, mapping=aes(x="flipper_length_mm", y="body_mass_g"))
+    + geom_point(aes(color="species", shape="species"))
+    + geom_smooth(method="lm")
+    + labs(
+        title="Body mass and flipper length",
+        subtitle="Dimensions for Adelie, Chinstrap, and Gentoo Penguins",
+        x="Flipper length (mm)",
+        y="Body mass (g)",
+        color="Species",
+        shape="Species",
+    )
+)
 ```
 
 ## Question|Task 3
 
-__COPY PASTE QUESTION|TASK 3 FROM THE PROJECT HERE__
+__Penuin Data Table__
 
-- _PROVIDE TABLES THAT HELP ADDRESS THE QUESTIONS AND TASKS (IF APPLICABLE)._
+-Here is the data table that has the information about Penguins. This is the data that was used for the previous chart
 
 ```{python}
 #| label: Q1-table
@@ -112,15 +113,7 @@ __COPY PASTE QUESTION|TASK 3 FROM THE PROJECT HERE__
 #| tbl-cap: "table example"
 #| tbl-cap-location: top
 # Include and execute your code here
-mydat = (df.head(1000)
-    .groupby('manufacturer')
-    .sum()
-    .reset_index()
-    .tail(10)
-    .filter(["manufacturer","displ","cty", "hwy"])
-)
-
-display(mydat)
+penguins
 
 ```
 
